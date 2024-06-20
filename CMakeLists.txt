@@ -249,3 +249,13 @@ INSTALL (
     DESTINATION "${cmake_config_path}"
     COMPONENT msgpack-cxx
 )
+
+# Configure pkg-config file.
+CONFIGURE_FILE (
+    msgpack-cxx.pc.in
+    msgpack-cxx.pc
+    @ONLY
+)
+
+# Install the pkg-config file.
+INSTALL (FILES ${CMAKE_CURRENT_BINARY_DIR}/msgpack-cxx.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
